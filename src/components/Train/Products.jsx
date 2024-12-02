@@ -38,7 +38,8 @@ const Products = () => {
 						<p className='text-2xl mt-2 font-black'>Rp 2.500.000</p>
 					</figcaption>
 
-					<div className='absolute w-full h-full top-0 opacity-0 text-white hover:opacity-90 bg-black grid place-content-center'>
+					<div className='absolute w-full h-full top-0 opacity-0 text-white hover:opacity-90
+					 bg-black grid place-content-center'>
 						<button className='font-black bg-white p-3 text-[#B88E2F]'>
 							Add to cart
 						</button>

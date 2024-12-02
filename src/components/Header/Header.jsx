@@ -4,6 +4,7 @@ import user from '../../assets/user.png';
 import heart from '../../assets/heart.png';
 import cart from '../../assets/cart.png';
 import search from '../../assets/search.png';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
@@ -26,10 +27,10 @@ const MobileNav = () => {
     return(
         <div className='fixed bg-yellow-600 text-black w-1/2  z-30 left-0 h-full transition ease-in-out top-16'>
             <ul className='w-1/2 text-2xl grid gap-5 font-bold mx-auto my-0 mt-10'>
-            <li> <a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li> <Link to='/'>Home</Link></li>
+            <li><Link to="/Shop">Shop</Link></li>
+            <li><Link to="/SingleProduct">About</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
         </ul>
         </div>
     )
@@ -37,10 +38,10 @@ const MobileNav = () => {
 const DesktopMode = () => {
     return(
             <ul className='md:flex gap-10 text-xl font-bold hidden'>
-            <li> <a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li> <Link to='/'>Home</Link></li>
+            <li><Link to="/Shop">Shop</Link></li>
+            <li><Link to="/SingleProduct">About</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
         </ul>
     )
 }
@@ -48,26 +49,34 @@ const IconNav = () => {
     return(
         <main className='hidden md:flex gap-10'>
             <article>
-                <a href="">
+                <Link to="/profile">
                     <img src={user} alt="user" />
-                </a>
+                </Link>
             </article>
             <article>
-                <a href="">
+                <Link to="/">
                     <img src={search} alt="search" />
-                </a>
+                </Link>
             </article>
-            <article>
-                <a href="">
+            <article className='relative block'>
+                <Link to="/Heart">
                     <img src={heart} alt="heart" />
-                </a>
+                    <span className='inline-flex items-center justify-center bg-red-500 text-whitetext absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4'>
+                        0
+                    </span>
+                </Link>
             </article>
-            <article>
-                <a href="">
+            <article className='relative block'>
+                <Link to="/Cart">
                     <img src={cart} alt="cart" />
-                </a>
+                    <span className='inline-flex items-center justify-center bg-red-500 text-whitetext absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4'>
+                        0
+                    </span>
+                </Link>
             </article>
     
+    
+
         </main>
     )
 }
